@@ -16,6 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
 
 import java.time.OffsetDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.Optional;
 import java.util.UUID;
@@ -40,7 +41,7 @@ public class CassandraPersistTest {
 		Teste t = Teste.builder().id(UUID.randomUUID())
 				.text("Teste")
 				.fase(FaseEvento.EVENTO)
-				.date(OffsetDateTime.now().toLocalDate()).build();
+				.date(Date.from(LocalDate.atStartOfDay(ZoneId.systemDefault()).toInstant())).build();
 		rp.save(t);
 	}
 

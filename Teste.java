@@ -20,7 +20,7 @@ public class Teste {
     private UUID id;
 
     @Column("date")
-    private LocalDate date;
+    private Date date;
 
     @Column("body")
     private String text;
