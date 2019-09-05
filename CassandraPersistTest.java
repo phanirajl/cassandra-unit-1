@@ -40,7 +40,7 @@ public class CassandraPersistTest {
 		Teste t = Teste.builder().id(UUID.randomUUID())
 				.text("Teste")
 				.fase(FaseEvento.EVENTO)
-				.date(OffsetDateTime.now()).build();
+				.date(OffsetDateTime.now().toLocalDate()).build();
 		rp.save(t);
 	}
 
@@ -51,7 +51,7 @@ public class CassandraPersistTest {
 		Teste t1 = Teste.builder().id(id)
 				.text("Teste")
 				.fase(FaseEvento.EVENTO)
-				.date(OffsetDateTime.now()).build();
+				.date(OffsetDateTime.now().toLocalDate()).build();
 		rp.save(t1);
 
 		Optional<Teste> t2 = rp.get(id);

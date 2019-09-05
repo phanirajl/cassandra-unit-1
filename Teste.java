@@ -6,6 +6,7 @@ import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
 import org.springframework.data.cassandra.core.mapping.Table;
 
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.Date;
 import java.util.UUID;
@@ -19,7 +20,7 @@ public class Teste {
     private UUID id;
 
     @Column("date")
-    private OffsetDateTime date;
+    private LocalDate date;
 
     @Column("body")
     private String text;
